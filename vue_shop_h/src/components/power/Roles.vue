@@ -9,7 +9,7 @@
     <el-card class="box-card">
       <el-row>
         <el-col :span="4">
-          <el-button type="primary">添加用户</el-button>
+          <el-button type="primary">添加角色</el-button>
         </el-col>
       </el-row>
 
@@ -236,7 +236,7 @@ export default {
         ...this.$refs.setRightsTreeRef.getCheckedKeys(),
         ...this.$refs.setRightsTreeRef.getHalfCheckedKeys(),
       ]
-      
+
       const idStr = keys.join(',')
       // console.log('@@@', keys)
 

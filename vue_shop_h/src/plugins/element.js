@@ -4,7 +4,7 @@ import Vue from 'vue'
 import {
     Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
     Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
-    Dialog,MessageBox,Tag,Tree,Select,Option
+    Dialog,MessageBox,Tag,Tree,Select,Option,Cascader
 } from 'element-ui'
 
 
@@ -34,6 +34,7 @@ Vue.use(Tag)
 Vue.use(Tree)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(Cascader)
 
 // Message 要进行全局挂载  $message 是个自定义属性
 Vue.prototype.$message = Message
