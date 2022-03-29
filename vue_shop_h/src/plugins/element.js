@@ -4,7 +4,8 @@ import Vue from 'vue'
 import {
     Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
     Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
-    Dialog,MessageBox,Tag,Tree,Select,Option,Cascader,Alert,Tabs,TabPane
+    Dialog,MessageBox,Tag,Tree,Select,Option,Cascader,Alert,Tabs,TabPane,Steps,Step,CheckboxGroup,Checkbox,
+    Upload
 } from 'element-ui'
 
 
@@ -38,6 +39,11 @@ Vue.use(Cascader)
 Vue.use(Alert)
 Vue.use(Tabs)
 Vue.use(TabPane)
+Vue.use(Steps)
+Vue.use(Step)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Upload)
 
 // Message 要进行全局挂载  $message 是个自定义属性
 Vue.prototype.$message = Message
