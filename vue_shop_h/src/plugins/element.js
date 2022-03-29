@@ -5,7 +5,7 @@ import {
     Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
     Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
     Dialog,MessageBox,Tag,Tree,Select,Option,Cascader,Alert,Tabs,TabPane,Steps,Step,CheckboxGroup,Checkbox,
-    Upload
+    Upload,Timeline,TimelineItem
 } from 'element-ui'
 
 
@@ -44,6 +44,8 @@ Vue.use(Step)
 Vue.use(Checkbox)
 Vue.use(CheckboxGroup)
 Vue.use(Upload)
+Vue.use(Timeline)
+Vue.use(TimelineItem)
 
 // Message 要进行全局挂载  $message 是个自定义属性
 Vue.prototype.$message = Message
