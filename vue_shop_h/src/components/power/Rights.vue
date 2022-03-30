@@ -15,13 +15,13 @@
         <el-table-column prop="authName" label="权限名称"> </el-table-column>
         <el-table-column prop="path" label="路径"> </el-table-column>
         <el-table-column prop="level" label="权限等级">
-          <template slot-scope="scope" >
+          <template slot-scope="scope">
             <el-tag type="" v-if="scope.row.level === '0'">一级</el-tag>
-            <el-tag type="success" v-else-if="scope.row.level === '1'">二级</el-tag>
+            <el-tag type="success" v-else-if="scope.row.level === '1'"
+              >二级</el-tag
+            >
             <el-tag type="warning" v-else>三级</el-tag>
           </template>
-          
-         
         </el-table-column>
       </el-table>
     </el-card>
@@ -34,27 +34,24 @@ export default {
   data() {
     return {
       rightsList: [],
-      alevel:0,
-      tagList:[
+      alevel: 0,
+      tagList: [
         {
-          level:0,
-          tagName:'一级',
-          type: ''
-
+          level: 0,
+          tagName: '一级',
+          type: '',
         },
         {
-          level:1,
-          tagName:'二级',
-          type: 'success'
-
+          level: 1,
+          tagName: '二级',
+          type: 'success',
         },
         {
-          level:0,
-          tagName:'三级',
-          type: 'warning'
-
+          level: 0,
+          tagName: '三级',
+          type: 'warning',
         },
-      ]
+      ],
     }
   },
   created() {
@@ -69,16 +66,14 @@ export default {
       }
       this.rightsList = res.data
     },
-    tagChose(level){
-      this.tagList.forEach(obj => {
-        if(obj.level === level) return obj.type
-      });
-    }
+    tagChose(level) {
+      this.tagList.forEach((obj) => {
+        if (obj.level === level) return obj.type
+      })
+    },
   },
 }
 </script>
 
 <style>
-
-
 </style>

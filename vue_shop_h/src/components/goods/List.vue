@@ -26,9 +26,7 @@
           </el-input>
         </el-col>
         <el-col :span="4">
-          <el-button type="primary" @click="addGoodsPage"
-            >添加商品</el-button
-          >
+          <el-button type="primary" @click="addGoodsPage">添加商品</el-button>
         </el-col>
       </el-row>
 
@@ -134,7 +132,6 @@ export default {
         pagesize: 10,
       },
       total: 0,
-      
     }
   },
   created() {
@@ -178,7 +175,6 @@ export default {
       ).catch((err) => err)
 
       if (confirmResult !== 'confirm') {
-
         return this.$message.info('已经取消删除')
       }
       const { data: res } = await this.$http.delete(`goods/${goId}`)
@@ -188,9 +184,9 @@ export default {
       this.$message.success('删除商品数据成功')
       this.getGoodsList()
     },
-    addGoodsPage(){
-        this.$router.push('/goods/add')
-    }
+    addGoodsPage() {
+      this.$router.push('/goods/add')
+    },
   },
 }
 </script>

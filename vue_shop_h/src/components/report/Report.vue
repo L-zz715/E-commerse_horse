@@ -21,7 +21,7 @@ export default {
   name: 'Report',
   data() {
     return {
-        // 用来合并的数据
+      // 用来合并的数据
       options: {
         title: { text: '用户来源' },
         tooltip: {
@@ -38,7 +38,6 @@ export default {
     //   dom挂载结束后才能初始化echarts实例，所以放在mounted钩子里
     var myChart = echarts.init(document.getElementById('main'))
 
-
     // 准备数据和配置项
     // 发起数据请求
     const { data: res } = await this.$http.get('reports/type/1')
@@ -48,9 +47,8 @@ export default {
     }
     this.$message.success('查询echart数据成功')
 
-    // 通过lodash进行对象的合并   
+    // 通过lodash进行对象的合并
     const result = _.merge(res.data, this.options)
-
 
     // 展示数据
     myChart.setOption(result)

@@ -92,9 +92,11 @@
               >编辑</el-button
             >
             <!-- 删除按钮 -->
-            <el-button type="danger" icon="el-icon-delete" size="mini"
+            <el-button
+              type="danger"
+              icon="el-icon-delete"
+              size="mini"
               @click="removeRoleById(scope.row.id)"
-
               >删除</el-button
             >
             <!-- 分配角色按钮 -->
@@ -237,9 +239,7 @@ export default {
         ],
       },
       editRoleDialogVisible: false,
-      editRoleForm:{
-
-      },
+      editRoleForm: {},
       editRoleFormRules: {
         roleName: [
           {
@@ -388,15 +388,14 @@ export default {
 
     // 修改窗口
     async showEditDialog(id) {
-    
-      const {data:res} = await this.$http.get(`roles/${id}`)
+      const { data: res } = await this.$http.get(`roles/${id}`)
       // console.log(res)
       if (res.meta.status !== 200) {
-          return this.$message.error('查找角色失败')
-        }
-        this.$message.success('查找角色成功')
+        return this.$message.error('查找角色失败')
+      }
+      this.$message.success('查找角色成功')
       this.editRoleForm = res.data
-    
+
       this.editRoleDialogVisible = true
     },
 
@@ -408,11 +407,14 @@ export default {
     // 确认修改
     editRole() {
       // 验证表单
-      this.$refs.editRoleFormRef.validate(async valid =>{
-        if(!valid) return
+      this.$refs.editRoleFormRef.validate(async (valid) => {
+        if (!valid) return
 
         // 请求修改
-        const {data:res} = await this.$http.put(`roles/${this.editRoleForm.roleId}`, this.editRoleForm)
+        const { data: res } = await this.$http.put(
+          `roles/${this.editRoleForm.roleId}`,
+          this.editRoleForm
+        )
         // console.log(res)
 
         if (res.meta.status !== 200) {
@@ -422,13 +424,10 @@ export default {
         this.getRolesList()
 
         this.editRoleDialogVisible = false
-
       })
-
-
     },
 
-    async removeRoleById(id){
+    async removeRoleById(id) {
       const confirmResult = await this.$confirm(
         '此操作将永久删除该角色, 是否继续?',
         '提示',
@@ -443,17 +442,15 @@ export default {
         return this.$message.info('已经取消删除')
       }
 
-
       // 删除角色
-      const {data:res} = await this.$http.delete(`roles/${id}`)
-      console.log(res)
+      const { data: res } = await this.$http.delete(`roles/${id}`)
+      // console.log(res)
       if (res.meta.status !== 200) {
-          return this.$message.error('删除角色失败')
-        }
-        this.$message.success('删除角色成功')
-        this.getRolesList()
-
-    }
+        return this.$message.error('删除角色失败')
+      }
+      this.$message.success('删除角色成功')
+      this.getRolesList()
+    },
   },
 }
 </script>

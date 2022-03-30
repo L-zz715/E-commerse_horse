@@ -4,8 +4,8 @@ import Vue from 'vue'
 import {
     Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
     Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
-    Dialog,MessageBox,Tag,Tree,Select,Option,Cascader,Alert,Tabs,TabPane,Steps,Step,CheckboxGroup,Checkbox,
-    Upload,Timeline,TimelineItem
+    Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Steps, Step, CheckboxGroup, Checkbox,
+    Upload, Timeline, TimelineItem
 } from 'element-ui'
 
 

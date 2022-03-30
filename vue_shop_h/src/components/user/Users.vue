@@ -88,7 +88,7 @@
         </el-table-column>
       </el-table>
 
-    <!-- 分页控制 -->
+      <!-- 分页控制 -->
       <el-pagination
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -198,14 +198,11 @@
           </el-select>
         </p>
       </div>
-      
 
       <!-- 底部区域 -->
       <span slot="footer" class="dialog-footer">
         <el-button @click="setRoleDialogVisible = false">取 消</el-button>
-        <el-button type="primary" @click="saveRoleInfo"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="saveRoleInfo">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -248,7 +245,7 @@ export default {
       userList: [],
       userInfo: {}, // 需要被分配角色的用户信息
       rolesList: [], //所有角色的数据列表
-      selectedRoleId:'',//已选中的id值
+      selectedRoleId: '', //已选中的id值
       total: 0,
       addDialogVisible: false, //控制添加用户对话框的显示与隐藏
       editDialogVisible: false,
@@ -485,8 +482,8 @@ export default {
       // console.log('确认删除')
     },
     setRoleDialogClosed() {
-      this.selectedRoleId = '';
-      this.userInfo = {};
+      this.selectedRoleId = ''
+      this.userInfo = {}
     },
     // 展示分配角色的对话框
     async setRole(role) {
@@ -504,22 +501,24 @@ export default {
       this.setRoleDialogVisible = true
     },
     // 点击按钮确定分配角色
-    async saveRoleInfo(){
-      if(!this.selectedRoleId){
-        return this.$message.error('请选择要分配的角色！');
-
+    async saveRoleInfo() {
+      if (!this.selectedRoleId) {
+        return this.$message.error('请选择要分配的角色！')
       }
 
-      const {data: res} = await this.$http.put(`users/${this.userInfo.id}/role`,{rid:this.selectedRoleId})
-      if(res.meta.status !== 200) {
-        return this.$message.error("分配角色失败")
+      const { data: res } = await this.$http.put(
+        `users/${this.userInfo.id}/role`,
+        { rid: this.selectedRoleId }
+      )
+      if (res.meta.status !== 200) {
+        return this.$message.error('分配角色失败')
       }
-      this.$message.success("分配角色成功")
+      this.$message.success('分配角色成功')
 
-      this.setRoleDialogClosed();
-      this.getUserList();
-      this.setRoleDialogVisible = false;
-    }
+      this.setRoleDialogClosed()
+      this.getUserList()
+      this.setRoleDialogVisible = false
+    },
   },
 }
 </script>

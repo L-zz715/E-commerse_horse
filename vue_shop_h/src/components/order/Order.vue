@@ -103,8 +103,11 @@
         label-width="100px"
       >
         <el-form-item label="省市区/县" prop="address1">
-          <el-cascader :options="cityData" v-model="addressForm.address1"
-          :props="{ expandTrigger: 'hover' }">
+          <el-cascader
+            :options="cityData"
+            v-model="addressForm.address1"
+            :props="{ expandTrigger: 'hover' }"
+          >
           </el-cascader>
         </el-form-item>
         <el-form-item label="详细地址" prop="address2">
@@ -121,26 +124,22 @@
     </el-dialog>
 
     <!-- 展示物流进度的对话框 -->
-  <el-dialog
+    <el-dialog
       title="物流进度"
       :visible.sync="progressDialogVisible"
       width="50%"
       @close="progressDialogClosed"
     >
-    <el-timeline :reverse="false">
-    <el-timeline-item
-      v-for="(p, index) in progressInfo"
-      :key="index"
-      :timestamp="p.time">
-      {{p.context}}
-    </el-timeline-item>
-  </el-timeline>
-
-
-  </el-dialog>
-
-
-
+      <el-timeline :reverse="false">
+        <el-timeline-item
+          v-for="(p, index) in progressInfo"
+          :key="index"
+          :timestamp="p.time"
+        >
+          {{ p.context }}
+        </el-timeline-item>
+      </el-timeline>
+    </el-dialog>
   </div>
 </template>
 
@@ -180,8 +179,8 @@ export default {
         ],
       },
       cityData: cityData, // 或者简写一个cityData  如果名和值是一样
-      progressDialogVisible:false, 
-      progressInfo:[],
+      progressDialogVisible: false,
+      progressInfo: [],
     }
   },
   created() {
@@ -214,48 +213,46 @@ export default {
     editAddrDialogClosed() {
       this.$refs.addressFormRef.resetFields()
     },
-    async showProgressBox(){
+    async showProgressBox() {
       // 快递的信息
       this.progressInfo = [
         {
           time: '2018-05-10 09:39:00  ',
           ftime: '2018-05-10 09:39:00',
           context: '已签收,感谢使用顺丰,期待再次为您服务',
-          location: ''
+          location: '',
         },
-       
+
         {
           time: '2018-05-10 07:32:00  ',
           ftime: '2018-05-10 07:32:00',
           context: '快件到达 【北京海淀育新小区营业点】',
-          location: ''
+          location: '',
         },
         {
           time: '2018-05-10 02:03:00  ',
           ftime: '2018-05-10 02:03:00',
-          context: '快件在【北京顺义集散中心】已装车,准备发往 【北京海淀育新小区营业点】',
-          location: ''
+          context:
+            '快件在【北京顺义集散中心】已装车,准备发往 【北京海淀育新小区营业点】',
+          location: '',
         },
         {
           time: '2018-05-09 23:05:00  ',
           ftime: '2018-05-09 23:05:00',
           context: '快件到达 【北京顺义集散中心】',
-          location: ''
-        }
-        
+          location: '',
+        },
       ]
       console.log(this.progressInfo)
       this.progressDialogVisible = true
     },
-    progressDialogClosed(){}
-
+    progressDialogClosed() {},
   },
 }
 </script>
 
 <style lang="less" scoped>
-
-.el-cascader{
+.el-cascader {
   width: 100%;
 }
 </style>
