@@ -13,6 +13,7 @@ module.exports = {
 
 
     // 产品发布时候的插件
+    'transform-remove-console',
     '@babel/plugin-syntax-dynamic-import'
 
   ],

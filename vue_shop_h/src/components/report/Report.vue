@@ -36,7 +36,7 @@ export default {
   },
   async mounted() {
     //   dom挂载结束后才能初始化echarts实例，所以放在mounted钩子里
-    var myChart = echarts.init(document.getElementById('main'))
+    const myChart = echarts.init(document.getElementById('main'))
 
     // 准备数据和配置项
     // 发起数据请求

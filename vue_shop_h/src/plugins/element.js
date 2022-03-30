@@ -2,12 +2,11 @@ import Vue from 'vue'
 
 // 弹窗提示组件 Message
 import {
-    Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
-    Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
-    Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Steps, Step, CheckboxGroup, Checkbox,
-    Upload, Timeline, TimelineItem
+  Button, Form, FormItem, Message, Input, Container, Header, Aside, Main, Menu, Submenu, MenuItem,
+  Breadcrumb, BreadcrumbItem, Card, Row, Col, Table, TableColumn, Switch, Tooltip, Pagination,
+  Dialog, MessageBox, Tag, Tree, Select, Option, Cascader, Alert, Tabs, TabPane, Steps, Step, CheckboxGroup, Checkbox,
+  Upload, Timeline, TimelineItem
 } from 'element-ui'
-
 
 Vue.use(Button)
 Vue.use(Form)
